@@ -2,7 +2,7 @@ public abstract class Material {
     private boolean burned;
     private boolean broken;
 
-    public Material(){
+    public Material() {
         this.broken = false;
         this.burned = false;
     }
@@ -23,7 +23,7 @@ public abstract class Material {
         return this.broken;
     }
 
-    public String getType(){
+    public String getType() {
         return null;
     }
 }

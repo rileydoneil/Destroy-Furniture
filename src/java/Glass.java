@@ -3,7 +3,7 @@ public class Glass extends Material {
         super();
     }
 
-    public String getType(){
+    public String getType() {
         return "glass";
     }
 
