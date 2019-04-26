@@ -1,29 +1,30 @@
+import java.util.*;
+
 public abstract class Material {
-    private boolean burned;
-    private boolean broken;
+    private Map<Damage, Boolean> damageType = new HashMap<>();
 
-    public Material() {
-        this.broken = false;
-        this.burned = false;
+    public Material(List<Damage> damages) {
+        for (Damage damage : damages) {
+            damageType.put(damage, false);
+        }
+
     }
 
-    public void setBurned(){
-        this.burned = true;
+    public void applyDamage(Damage type) {
+        damageType.put(type, true);
     }
 
-    public void setBroken(){
-        this.broken = true;
-    }
-
-    public boolean isBurned(){
-        return this.burned;
+    public boolean isBurned() {
+        return damageType.get(Damage.FIRE);
     }
 
     public boolean isBroken(){
-        return this.broken;
+        return damageType.get(Damage.BLUNT);
     }
 
     public String getType() {
         return null;
     }
+
+
 }

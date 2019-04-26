@@ -13,23 +13,20 @@ public abstract class Furniture {
     public boolean isBroken() { return material.isBroken();}
     public boolean isBurned() { return material.isBurned();}
 
-    public void setBroken() {
-        material.setBroken();
-    }
-    public void setBurned() {
-        material.setBurned();
+    public void applyDamage(Damage type){
+        material.applyDamage(type);
     }
 
     public void getStatus() {
         System.out.print("The " + this.material.getType() + " " + this.furnitureType);
-        if(!material.isBroken()) {
+        if(material.isBroken()) {
             System.out.print(" is broken ");
         }
         else {
             System.out.print(" is not broken ");
         }
         System.out.print("and ");
-        if(!material.isBurned()) {
+        if(material.isBurned()) {
             System.out.print("it is burnt.");
         }
         else {

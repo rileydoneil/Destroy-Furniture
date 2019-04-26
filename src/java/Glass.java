@@ -1,10 +1,12 @@
+import java.util.Arrays;
+
 public class Glass extends Material {
     public Glass() {
-        super();
+        super(Arrays.asList(Damage.BLUNT));
     }
 
     public String getType() {
-        return "glass";
+        return "Glass";
     }
 
     @Override
